@@ -17,8 +17,8 @@ var appInstance;
 var header = createHeader(document.querySelector('#caleydoHeader'), { appLink: new AppHeaderLink(APP_NAME) });
 var menu = new LoginMenu(header);
 header.insertCustomRightMenu(menu.node);
-document.querySelector('input#login_username').value = 'admin';
-document.querySelector('input#login_password').value = 'admin';
+document.querySelector('input#login_username').value = '';
+document.querySelector('input#login_password').value = '';
 menu.on(LoginMenu.EVENT_LOGGED_IN, function () {
     console.assert(isLoggedIn());
     console.log(currentUser());
@@ -34,6 +34,7 @@ menu.on(LoginMenu.EVENT_LOGGED_OUT, function () {
     select('#data_selection').html('');
     select('#graph').html('');
     select('#table').html('');
+    select('#map').html('');
     select('#app').append('div').attr('id', 'loading').append('h1').style('margin', '5px').html('You have logged out...');
 });
 var parent = document.querySelector('#app');

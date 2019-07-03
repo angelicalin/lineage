@@ -4,7 +4,7 @@ import { scaleLinear } from 'd3-scale';
 import { max } from 'd3-array';
 import { event } from 'd3-selection';
 import * as _ from 'underscore';
-import { FAMILY_INFO_UPDATED } from './tableManager';
+import { FAMILY_INFO_UPDATED, SINGLE_FAMILY_SELECTED_EVENT } from './tableManager';
 /**
  * Creates the family selector view
  */
@@ -33,6 +33,10 @@ var FamilySelector = /** @class */ (function () {
         this.build();
         // this.updateTable();
         events.on(FAMILY_INFO_UPDATED, function (evt, tableManagerObject) {
+            _this.updateTable();
+        });
+        events.on(SINGLE_FAMILY_SELECTED_EVENT, function (evt, familyIDNum) {
+            _this.selectedFamilyIds = [familyIDNum];
             _this.updateTable();
         });
         // return the promise directly as long there is no dynamical data to update
@@ -173,7 +177,6 @@ var FamilySelector = /** @class */ (function () {
     FamilySelector.prototype.selectRow = function (familyID, rowData, numCols, update) {
         var _this = this;
         if (update === void 0) { update = true; }
-        console.log(familyID);
         var thisIcon = select('#tableBody')
             .select('tbody')
             .selectAll('.addRemoveIcon')

@@ -32,8 +32,8 @@ const header = createHeader(
 const menu = new LoginMenu(header);
 header.insertCustomRightMenu(menu.node);
 
-(<HTMLInputElement>document.querySelector('input#login_username')).value = 'admin';
-(<HTMLInputElement>document.querySelector('input#login_password')).value = 'admin';
+(<HTMLInputElement>document.querySelector('input#login_username')).value = '';
+(<HTMLInputElement>document.querySelector('input#login_password')).value = '';
 
 menu.on(LoginMenu.EVENT_LOGGED_IN, () => {
   console.assert(isLoggedIn());
@@ -53,6 +53,7 @@ menu.on(LoginMenu.EVENT_LOGGED_OUT, () => {
   select('#data_selection').html('');
   select('#graph').html('');
   select('#table').html('');
+  select('#map').html('');
 
   select('#app').append('div').attr('id', 'loading').append('h1').style('margin', '5px').html('You have logged out...');
 

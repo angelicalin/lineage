@@ -62,10 +62,10 @@ class FamilySelector {
     events.on(FAMILY_INFO_UPDATED, (evt, tableManagerObject) => {
       this.updateTable();
     });
-    events.on(SINGLE_FAMILY_SELECTED_EVENT,(evt,familyIDNum)=>{
+    events.on(SINGLE_FAMILY_SELECTED_EVENT,(evt, familyIDNum) => {
       this.selectedFamilyIds = [familyIDNum];
       this.updateTable();
-    })
+    });
 
     // return the promise directly as long there is no dynamical data to update
     return Promise.resolve(this);

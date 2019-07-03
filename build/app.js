@@ -1,4 +1,4 @@
-/*! lineage - v1.0.0-20190601-171541 - 2019
+/*! lineage - v1.0.0-20190603-155540 - 2019
 * https://phovea.caleydo.org
 * Copyright (c) 2019 Carolina Nobre; Licensed BSD-3-Clause*/
 
@@ -1595,7 +1595,7 @@ function cell() {
 
 
 
-var version = "1.0.0-20190601-171541";
+var version = "1.0.0-20190603-155540";
 /**
  * whether the standard api calls should be prevented
  * @type {boolean}
@@ -3811,22 +3811,23 @@ var Node = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_util__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_util___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_util__);
 /* unused harmony export VIEW_CHANGED_EVENT */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return TABLE_VIS_ROWS_CHANGED_EVENT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return PRIMARY_SELECTED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return POI_SELECTED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "j", function() { return TABLE_VIS_ROWS_CHANGED_EVENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "k", function() { return PRIMARY_SELECTED; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return POI_SELECTED; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return FAMILY_INFO_UPDATED; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return COL_ORDER_CHANGED_EVENT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return FAMILY_SELECTED_EVENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return COL_ORDER_CHANGED_EVENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "p", function() { return FAMILY_SELECTED_EVENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return SINGLE_FAMILY_SELECTED_EVENT; });
 /* unused harmony export UPDATE_TABLE_EVENT */
 /* unused harmony export SET_ALL_AVERAGE_LIMIT_EVENT */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return HIDE_FAMILY_TREE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "d", function() { return HIDE_FAMILY_TREE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "o", function() { return MAP_ATTRIBUTE_CHANGE_EVENT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return SHOW_TOP_100_EVENT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return SHOW_DETAIL_VIEW; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "l", function() { return HIGHLIGHT_BY_ID; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return CLEAR_TABLE_HIGHLIGHT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return HIGHLIGHT_MAP_BY_ID; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return CLEAR_MAP_HIGHLIGHT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return SHOW_TOP_100_EVENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "i", function() { return SHOW_DETAIL_VIEW; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "m", function() { return HIGHLIGHT_BY_ID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "n", function() { return CLEAR_TABLE_HIGHLIGHT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "h", function() { return HIGHLIGHT_MAP_BY_ID; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return CLEAR_MAP_HIGHLIGHT; });
 /* unused harmony export POI_COLOR */
 /* unused harmony export POI_COLOR_2 */
 /* unused harmony export PRIMARY_COLOR */
@@ -3856,6 +3857,7 @@ var POI_SELECTED = 'affected_attribute_event';
 var FAMILY_INFO_UPDATED = 'family_stats_updated';
 var COL_ORDER_CHANGED_EVENT = 'col_ordering_changed';
 var FAMILY_SELECTED_EVENT = 'family_selected_event';
+var SINGLE_FAMILY_SELECTED_EVENT = 'SINGLE_FAMILY_SELECTED_EVENT';
 var UPDATE_TABLE_EVENT = 'update_table';
 var SET_ALL_AVERAGE_LIMIT_EVENT = 'all_average_limit_changed';
 var HIDE_FAMILY_TREE = 'hide_family_tree';
@@ -4392,7 +4394,6 @@ var TableManager = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         self = this;
-                        //console.log(this.familyInfo)
                         console.log('selectingFamily', chosenFamilyIDs);
                         self.familyIDArray = chosenFamilyIDs;
                         family = this.familyInfo.find(function (family) {
@@ -5393,7 +5394,7 @@ function __importDefault(mod) {
 
 
 
-var version = "1.0.0-20190601-171541";
+var version = "1.0.0-20190603-155540";
 /**
  * whether the standard api calls should be prevented
  * @type {boolean}
@@ -16090,22 +16091,22 @@ var GenealogyTree = /** @class */ (function () {
     };
     GenealogyTree.prototype.attachListeners = function () {
         var _this = this;
-        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_10__tableManager__["i" /* TABLE_VIS_ROWS_CHANGED_EVENT */], function (evt, item) {
+        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_10__tableManager__["j" /* TABLE_VIS_ROWS_CHANGED_EVENT */], function (evt, item) {
             _this.update();
         });
-        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_10__tableManager__["j" /* PRIMARY_SELECTED */], function (evt, attribute) {
+        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_10__tableManager__["k" /* PRIMARY_SELECTED */], function (evt, attribute) {
             _this.primaryAttribute = attribute;
             _this.update_graph();
             // this.update_visible_nodes();
             _this.update_legend();
         });
-        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_10__tableManager__["k" /* POI_SELECTED */], function (evt, affectedState) {
+        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_10__tableManager__["l" /* POI_SELECTED */], function (evt, affectedState) {
             _this.data.defineAffected(affectedState);
             _this.data.aggregateTreeWrapper(undefined, undefined);
             _this.update_time_axis();
             _this.update_graph();
         });
-        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_10__tableManager__["c" /* HIDE_FAMILY_TREE */], function (evt, item) {
+        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_10__tableManager__["d" /* HIDE_FAMILY_TREE */], function (evt, item) {
             var treeComponent = document.getElementById('col2');
             if (treeComponent.style.display === 'none') {
                 treeComponent.style.display = 'block';
@@ -34822,8 +34823,8 @@ var appInstance;
 var header = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_7_phovea_ui_src_header__["a" /* create */])(document.querySelector('#caleydoHeader'), { appLink: new __WEBPACK_IMPORTED_MODULE_7_phovea_ui_src_header__["b" /* AppHeaderLink */](__WEBPACK_IMPORTED_MODULE_8__language__["a" /* APP_NAME */]) });
 var menu = new __WEBPACK_IMPORTED_MODULE_9_phovea_security_flask_src_LoginMenu__["a" /* default */](header);
 header.insertCustomRightMenu(menu.node);
-document.querySelector('input#login_username').value = 'admin';
-document.querySelector('input#login_password').value = 'admin';
+document.querySelector('input#login_username').value = '';
+document.querySelector('input#login_password').value = '';
 menu.on(__WEBPACK_IMPORTED_MODULE_9_phovea_security_flask_src_LoginMenu__["a" /* default */].EVENT_LOGGED_IN, function () {
     console.assert(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10_phovea_core_src_security__["a" /* isLoggedIn */])());
     console.log(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_10_phovea_core_src_security__["b" /* currentUser */])());
@@ -34839,6 +34840,7 @@ menu.on(__WEBPACK_IMPORTED_MODULE_9_phovea_security_flask_src_LoginMenu__["a" /*
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_d3_selection__["a" /* select */])('#data_selection').html('');
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_d3_selection__["a" /* select */])('#graph').html('');
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_d3_selection__["a" /* select */])('#table').html('');
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_d3_selection__["a" /* select */])('#map').html('');
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_5_d3_selection__["a" /* select */])('#app').append('div').attr('id', 'loading').append('h1').style('margin', '5px').html('You have logged out...');
 });
 var parent = document.querySelector('#app');
@@ -34959,7 +34961,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-var version = "1.0.0-20190601-171541";
+var version = "1.0.0-20190603-155540";
 /**
  * whether the standard api calls should be prevented
  * @type {boolean}
@@ -38686,8 +38688,10 @@ var App = /** @class */ (function () {
                         dataset = parsedUrl.search.split('ds=')[1];
                         if (!(dataset === 'suicide' || !dataset)) return [3 /*break*/, 2];
                         dataset = 'suicide';
-                        return [4 /*yield*/, tableManager.loadData('TenFamiliesDescend', 'TenFamiliesAttr')];
+                        //await tableManager.loadData('TenFamiliesDescend','TenFamiliesAttr');
+                        return [4 /*yield*/, tableManager.loadData('AllFamiliesDescend', 'AllFamiliesAttributes')];
                     case 1:
+                        //await tableManager.loadData('TenFamiliesDescend','TenFamiliesAttr');
                         _a.sent();
                         return [3 /*break*/, 6];
                     case 2:
@@ -39144,7 +39148,7 @@ var AttributeTable = /** @class */ (function () {
                     .attr('role', 'button')
                     .html('Show/Hide tree')
                     .on('click', function (d) {
-                    __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["c" /* HIDE_FAMILY_TREE */]);
+                    __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["d" /* HIDE_FAMILY_TREE */]);
                 });
                 list = dropdownMenu.append('li').attr('class', 'dropdown');
                 list
@@ -39237,7 +39241,7 @@ var AttributeTable = /** @class */ (function () {
                         self.tableManager.colOrder.splice(lastIndex, 0, d);
                         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_selection__["a" /* select */])(this).classed('active', true);
                     }
-                    __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["d" /* COL_ORDER_CHANGED_EVENT */]);
+                    __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["e" /* COL_ORDER_CHANGED_EVENT */]);
                 });
                 listTop = dropdownMenu.append('li').attr('class', 'dropdown');
                 listTop
@@ -39538,7 +39542,7 @@ var AttributeTable = /** @class */ (function () {
                         });
                         personChangeAbsDict.forEach(function (person) {
                             var id = person.ID;
-                            if (kindredIDDict[id]) {
+                            if (kindredIDDict[id] && rank <= 100) {
                                 rank += 1;
                                 yDict[id + '_' + kindredIDDict[id]] = [rank];
                                 idRange.push(id);
@@ -39570,7 +39574,7 @@ var AttributeTable = /** @class */ (function () {
                         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_selection__["b" /* selectAll */])('.slopeLine').classed('clickedSlope', false);
                         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_selection__["b" /* selectAll */])('.highlightBar').classed('selected', false);
                         this.update();
-                        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["e" /* SHOW_TOP_100_EVENT */]);
+                        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["f" /* SHOW_TOP_100_EVENT */]);
                         return [2 /*return*/];
                 }
             });
@@ -40431,7 +40435,7 @@ var AttributeTable = /** @class */ (function () {
         })
             .on('mouseout', function (d) {
             _this.clearHighlight();
-            __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["f" /* CLEAR_MAP_HIGHLIGHT */]);
+            __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["g" /* CLEAR_MAP_HIGHLIGHT */]);
         })
             .on('click', this.clickHighlight);
         //create slope Lines
@@ -40594,7 +40598,7 @@ var AttributeTable = /** @class */ (function () {
         __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_selection__["b" /* selectAll */])('.cell')
             .on('mouseover', function (cellData) {
             self.highlightRow(cellData);
-            __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["g" /* HIGHLIGHT_MAP_BY_ID */], cellData.id[0]);
+            __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["h" /* HIGHLIGHT_MAP_BY_ID */], cellData.id[0]);
             self.addTooltip('cell', cellData);
             if (cellData.type === 'temporal') {
                 if (cellData.level_set === undefined) {
@@ -40788,7 +40792,7 @@ var AttributeTable = /** @class */ (function () {
             .on('mouseout', function (cellData) {
             self.clearHighlight();
             __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_selection__["a" /* select */])('.menu').remove();
-            __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["f" /* CLEAR_MAP_HIGHLIGHT */]);
+            __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["g" /* CLEAR_MAP_HIGHLIGHT */]);
             if (cellData.type === 'temporal') {
                 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_selection__["a" /* select */])(this)
                     .selectAll('.full_line_graph')
@@ -40910,6 +40914,7 @@ var AttributeTable = /** @class */ (function () {
         })
             .on('click', function (d) {
             if (d.name === 'KindredID') {
+                __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["c" /* SINGLE_FAMILY_SELECTED_EVENT */], parseInt(d.data, 10));
                 self.tableManager.selectFamily([parseInt(d.data, 10)]);
                 self.highlightedID = d.id[0];
                 document.getElementById('col2').style.display = 'block';
@@ -41039,7 +41044,7 @@ var AttributeTable = /** @class */ (function () {
         var allRows = Object.keys(this.tableManager.yValues);
         allRows.forEach(function (key) {
             if (_this.tableManager.yValues[key] === yVal) {
-                __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["g" /* HIGHLIGHT_MAP_BY_ID */], key.split('_')[0]);
+                __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["h" /* HIGHLIGHT_MAP_BY_ID */], key.split('_')[0]);
             }
         });
     };
@@ -41323,7 +41328,7 @@ var AttributeTable = /** @class */ (function () {
                 return item === d.name;
             })
                 .classed('active', false);
-            __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["d" /* COL_ORDER_CHANGED_EVENT */]);
+            __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["e" /* COL_ORDER_CHANGED_EVENT */]);
         });
     };
     AttributeTable.prototype.addMenu = function (d) {
@@ -41537,7 +41542,7 @@ var AttributeTable = /** @class */ (function () {
                 _this.update();
             }
             else if (e.label.includes('Detail')) {
-                __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["h" /* SHOW_DETAIL_VIEW */], d);
+                __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["i" /* SHOW_DETAIL_VIEW */], d);
             }
             __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_d3_selection__["a" /* select */])('#treeMenu')
                 .select('.menu')
@@ -43084,25 +43089,25 @@ var AttributeTable = /** @class */ (function () {
             //   // hist.setPrimarySecondary(obj);
             // });
         });
-        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["i" /* TABLE_VIS_ROWS_CHANGED_EVENT */], function () {
+        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["j" /* TABLE_VIS_ROWS_CHANGED_EVENT */], function () {
             self.update();
         });
-        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["j" /* PRIMARY_SELECTED */], function (evt, item) {
+        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["k" /* PRIMARY_SELECTED */], function (evt, item) {
             self.render();
         });
-        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["k" /* POI_SELECTED */], function (evt, item) {
+        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["l" /* POI_SELECTED */], function (evt, item) {
             self.render();
         });
-        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["d" /* COL_ORDER_CHANGED_EVENT */], function (evt, item) {
+        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["e" /* COL_ORDER_CHANGED_EVENT */], function (evt, item) {
             self.update();
         });
-        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["l" /* HIGHLIGHT_BY_ID */], function (evt, item) {
+        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["m" /* HIGHLIGHT_BY_ID */], function (evt, item) {
             self.highlightRowByID(item);
         });
-        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["m" /* CLEAR_TABLE_HIGHLIGHT */], function () {
+        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["n" /* CLEAR_TABLE_HIGHLIGHT */], function () {
             self.clearHighlight();
         });
-        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["n" /* FAMILY_SELECTED_EVENT */], function () {
+        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_17__tableManager__["c" /* SINGLE_FAMILY_SELECTED_EVENT */], function () {
             self.SHOWING_RANKED = false;
         });
     };
@@ -43167,6 +43172,10 @@ var FamilySelector = /** @class */ (function () {
         this.build();
         // this.updateTable();
         __WEBPACK_IMPORTED_MODULE_0_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_5__tableManager__["b" /* FAMILY_INFO_UPDATED */], function (evt, tableManagerObject) {
+            _this.updateTable();
+        });
+        __WEBPACK_IMPORTED_MODULE_0_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_5__tableManager__["c" /* SINGLE_FAMILY_SELECTED_EVENT */], function (evt, familyIDNum) {
+            _this.selectedFamilyIds = [familyIDNum];
             _this.updateTable();
         });
         // return the promise directly as long there is no dynamical data to update
@@ -43307,7 +43316,6 @@ var FamilySelector = /** @class */ (function () {
     FamilySelector.prototype.selectRow = function (familyID, rowData, numCols, update) {
         var _this = this;
         if (update === void 0) { update = true; }
-        console.log(familyID);
         var thisIcon = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_d3_selection__["a" /* select */])('#tableBody')
             .select('tbody')
             .selectAll('.addRemoveIcon')
@@ -43584,7 +43592,7 @@ var GraphData = /** @class */ (function () {
     }
     GraphData.prototype.setListeners = function () {
         var _this = this;
-        __WEBPACK_IMPORTED_MODULE_3_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_4__tableManager__["n" /* FAMILY_SELECTED_EVENT */], function () {
+        __WEBPACK_IMPORTED_MODULE_3_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_4__tableManager__["p" /* FAMILY_SELECTED_EVENT */], function () {
             _this.graphTable = _this.tableManager.graphTable;
             //Once tree has been created for the new family, fire redraw tree event.
             _this.createTree()
@@ -44941,7 +44949,7 @@ var MapView = /** @class */ (function () {
                 circleTip.style('opacity', .9);
                 // .transition()
                 // .duration(10)
-                __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_13__tableManager__["l" /* HIGHLIGHT_BY_ID */], d.ID);
+                __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_13__tableManager__["m" /* HIGHLIGHT_BY_ID */], d.ID);
                 //TODO: this need to not ignore 0
                 circleTip.html(d.dataVal ? d.dataVal : '-')
                     .style('left', (__WEBPACK_IMPORTED_MODULE_2_d3_selection__["c" /* event */].pageX) + 'px')
@@ -44957,7 +44965,7 @@ var MapView = /** @class */ (function () {
                 //      .attr('opacity',1);
             })
                 .on('mouseout', function (d) {
-                __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_13__tableManager__["m" /* CLEAR_TABLE_HIGHLIGHT */]);
+                __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_13__tableManager__["n" /* CLEAR_TABLE_HIGHLIGHT */]);
                 circleTip
                     //.transition()
                     //    .duration(10)
@@ -45168,11 +45176,11 @@ var MapView = /** @class */ (function () {
                                                     graph.selectAll('.line_graph_' + id).attr('opaity', 0.8);
                                                 }
                                             });
-                                            __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_13__tableManager__["l" /* HIGHLIGHT_BY_ID */], selectedId);
+                                            __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_13__tableManager__["m" /* HIGHLIGHT_BY_ID */], selectedId);
                                         })
                                             .on('mouseout', function (d) {
                                             graph.selectAll('.line_graph').attr('opacity', 0.8);
-                                            __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_13__tableManager__["m" /* CLEAR_TABLE_HIGHLIGHT */]);
+                                            __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["b" /* fire */](__WEBPACK_IMPORTED_MODULE_13__tableManager__["n" /* CLEAR_TABLE_HIGHLIGHT */]);
                                         });
                                         //Create gradient
                                         graph.append('rect')
@@ -45346,18 +45354,18 @@ var MapView = /** @class */ (function () {
     };
     MapView.prototype.attachListener = function () {
         var self = this;
-        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_13__tableManager__["i" /* TABLE_VIS_ROWS_CHANGED_EVENT */], function () {
+        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_13__tableManager__["j" /* TABLE_VIS_ROWS_CHANGED_EVENT */], function () {
             self.update();
             //   console.log('fire table row')
         });
         __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_13__tableManager__["o" /* MAP_ATTRIBUTE_CHANGE_EVENT */], function () {
             self.update();
         });
-        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_13__tableManager__["e" /* SHOW_TOP_100_EVENT */], function () {
+        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_13__tableManager__["f" /* SHOW_TOP_100_EVENT */], function () {
             self.update();
             //   console.log('fire top 100')
         });
-        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_13__tableManager__["h" /* SHOW_DETAIL_VIEW */], function (evt, vector) {
+        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_13__tableManager__["i" /* SHOW_DETAIL_VIEW */], function (evt, vector) {
             if (!self.detailViewAttribute.includes(vector.name)) {
                 self.detailViewAttribute.unshift(vector.name);
             }
@@ -45367,13 +45375,13 @@ var MapView = /** @class */ (function () {
             self.currentViewType = 'Detail';
             self.update();
         });
-        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_13__tableManager__["g" /* HIGHLIGHT_MAP_BY_ID */], function (evt, id) {
+        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_13__tableManager__["h" /* HIGHLIGHT_MAP_BY_ID */], function (evt, id) {
             self.highlightID(id);
         });
-        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_13__tableManager__["f" /* CLEAR_MAP_HIGHLIGHT */], function () {
+        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_13__tableManager__["g" /* CLEAR_MAP_HIGHLIGHT */], function () {
             self.clearAllHighlight();
         });
-        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_13__tableManager__["d" /* COL_ORDER_CHANGED_EVENT */], function () {
+        __WEBPACK_IMPORTED_MODULE_1_phovea_core_src_event__["a" /* on */](__WEBPACK_IMPORTED_MODULE_13__tableManager__["e" /* COL_ORDER_CHANGED_EVENT */], function () {
             self.update();
         });
     };

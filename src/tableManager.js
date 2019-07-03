@@ -17,6 +17,7 @@ export var POI_SELECTED = 'affected_attribute_event';
 export var FAMILY_INFO_UPDATED = 'family_stats_updated';
 export var COL_ORDER_CHANGED_EVENT = 'col_ordering_changed';
 export var FAMILY_SELECTED_EVENT = 'family_selected_event';
+export var SINGLE_FAMILY_SELECTED_EVENT = 'SINGLE_FAMILY_SELECTED_EVENT';
 export var UPDATE_TABLE_EVENT = 'update_table';
 export var SET_ALL_AVERAGE_LIMIT_EVENT = 'all_average_limit_changed';
 export var HIDE_FAMILY_TREE = 'hide_family_tree';
@@ -553,7 +554,6 @@ var TableManager = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         self = this;
-                        //console.log(this.familyInfo)
                         console.log('selectingFamily', chosenFamilyIDs);
                         self.familyIDArray = chosenFamilyIDs;
                         family = this.familyInfo.find(function (family) {

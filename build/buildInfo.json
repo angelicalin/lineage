@@ -1,7 +1,7 @@
 {
  "name": "lineage",
- "version": "1.0.0-20190601-171541",
- "resolved": "https://github.com/Caleydo/lineage/commit/d0c2f8cd5f6a28d67e4d18f896649baf3cc6dd00",
+ "version": "1.0.0-20190603-155540",
+ "resolved": "https://github.com/Caleydo/lineage/commit/1573bc4a2c61f78dbdaf9fd8ac7143e3c4dcbce0",
  "dependencies": {
   "@types/d3-array": {
    "version": "1.2.3",

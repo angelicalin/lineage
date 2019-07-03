@@ -80,8 +80,10 @@ var App = /** @class */ (function () {
                         dataset = parsedUrl.search.split('ds=')[1];
                         if (!(dataset === 'suicide' || !dataset)) return [3 /*break*/, 2];
                         dataset = 'suicide';
-                        return [4 /*yield*/, tableManager.loadData('TenFamiliesDescend', 'TenFamiliesAttr')];
+                        //await tableManager.loadData('TenFamiliesDescend','TenFamiliesAttr');
+                        return [4 /*yield*/, tableManager.loadData('AllFamiliesDescend', 'AllFamiliesAttributes')];
                     case 1:
+                        //await tableManager.loadData('TenFamiliesDescend','TenFamiliesAttr');
                         _a.sent();
                         return [3 /*break*/, 6];
                     case 2:

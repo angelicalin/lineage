@@ -17,7 +17,7 @@ import Histogram from './Histogram';
 import { VALUE_TYPE_CATEGORICAL, VALUE_TYPE_INT, VALUE_TYPE_REAL, VALUE_TYPE_STRING } from 'phovea_core/src/datatype';
 import { line } from 'd3-shape';
 import * as _ from 'underscore';
-import { PRIMARY_SELECTED, COL_ORDER_CHANGED_EVENT, POI_SELECTED, TABLE_VIS_ROWS_CHANGED_EVENT, HIDE_FAMILY_TREE, SHOW_TOP_100_EVENT, FAMILY_SELECTED_EVENT, SHOW_DETAIL_VIEW, HIGHLIGHT_BY_ID, CLEAR_TABLE_HIGHLIGHT, HIGHLIGHT_MAP_BY_ID, CLEAR_MAP_HIGHLIGHT } from './tableManager';
+import { PRIMARY_SELECTED, COL_ORDER_CHANGED_EVENT, POI_SELECTED, TABLE_VIS_ROWS_CHANGED_EVENT, HIDE_FAMILY_TREE, SHOW_TOP_100_EVENT, SHOW_DETAIL_VIEW, HIGHLIGHT_BY_ID, CLEAR_TABLE_HIGHLIGHT, HIGHLIGHT_MAP_BY_ID, CLEAR_MAP_HIGHLIGHT, SINGLE_FAMILY_SELECTED_EVENT } from './tableManager';
 import { isUndefined } from 'util';
 var sortedState;
 (function (sortedState) {
@@ -651,7 +651,7 @@ var AttributeTable = /** @class */ (function () {
                         });
                         personChangeAbsDict.forEach(function (person) {
                             var id = person.ID;
-                            if (kindredIDDict[id]) {
+                            if (kindredIDDict[id] && rank <= 100) {
                                 rank += 1;
                                 yDict[id + '_' + kindredIDDict[id]] = [rank];
                                 idRange.push(id);
@@ -2023,6 +2023,7 @@ var AttributeTable = /** @class */ (function () {
         })
             .on('click', function (d) {
             if (d.name === 'KindredID') {
+                events.fire(SINGLE_FAMILY_SELECTED_EVENT, parseInt(d.data, 10));
                 self.tableManager.selectFamily([parseInt(d.data, 10)]);
                 self.highlightedID = d.id[0];
                 document.getElementById('col2').style.display = 'block';
@@ -4215,7 +4216,7 @@ var AttributeTable = /** @class */ (function () {
         events.on(CLEAR_TABLE_HIGHLIGHT, function () {
             self.clearHighlight();
         });
-        events.on(FAMILY_SELECTED_EVENT, function () {
+        events.on(SINGLE_FAMILY_SELECTED_EVENT, function () {
             self.SHOWING_RANKED = false;
         });
     };
